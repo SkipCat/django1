@@ -13,8 +13,7 @@ def index(request):
             return HttpResponse('<pre>' + automaton(form.cleaned_data.get('rule')) + '</pre>')
     else:
         form = RuleForm()
-
-    return render(request, 'index.html', { 'form': form })
+    return render(request, 'elementary_cellular_automata/index.html', { 'form': form })
 
 def automaton(ruleNumber):
     rule = [int(i) for i in f'{int(ruleNumber):08b}']
