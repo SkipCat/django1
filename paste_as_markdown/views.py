@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.db import IntegrityError
+
 import markdown2
 import uuid
 
@@ -8,7 +9,7 @@ from .forms import MarkdownForm
 from .models import Markdown
 
 def index(request):
-    # error = ''
+    error = ''
 
     if request.method == 'POST':
         form = MarkdownForm(request.POST)

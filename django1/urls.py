@@ -21,4 +21,5 @@ urlpatterns = [
     path('elementary-cellular-automata/', include('elementary_cellular_automata.urls')),
     path('paste-as-markdown/', include('paste_as_markdown.urls')),
     path('admin/', admin.site.urls),
+    path('hashid/', include('hashid.urls'))
 ]
