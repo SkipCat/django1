@@ -25,7 +25,10 @@ SECRET_KEY = 'wbp37aedws#%+60gtlfgz*cda%$34#)pv11vf-w&qdvct55e+w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1'
+]
 
 
 # Application definition
@@ -54,7 +57,9 @@ ROOT_URLCONF = 'django1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR + '/elementary_cellular_automata/templates/'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

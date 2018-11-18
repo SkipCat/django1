@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('automata/', include('elementary_cellular_automata.urls')),
-    path('markdown/', include('paste_as_markdown.urls')),
+    path('elementary-cellular-automata/', include('elementary_cellular_automata.urls')),
+    path('paste-as-markdown/', include('paste_as_markdown.urls')),
     path('admin/', admin.site.urls),
 ]

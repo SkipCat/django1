@@ -3,13 +3,18 @@ from django.http import HttpResponse
 import math
 import sys
 
-def index(request):
-    rule = request.GET.get('rule', None)
+from .forms import RuleForm
 
-    if rule is None:
-        return HttpResponse('Please provide a parameter in URL like "?rule=<number>"')
+
+def index(request):
+    if request.method == 'GET':
+        form = RuleForm(request.GET)
+        if form.is_valid():
+            return HttpResponse('<pre>' + automaton(form.cleaned_data.get('rule')) + '</pre>')
     else:
-        return HttpResponse('<pre>' + automaton(rule) + '</pre>')
+        form = RuleForm()
+
+    return render(request, 'index.html', { 'form': form })
 
 def automaton(ruleNumber):
     rule = [int(i) for i in f'{int(ruleNumber):08b}']
@@ -61,8 +66,6 @@ def automaton(ruleNumber):
     buffer = []
 
     for line in lines:
-        line_schema = ''
-
         for value in line:
             if value == 1:
                 buffer.append("#")
