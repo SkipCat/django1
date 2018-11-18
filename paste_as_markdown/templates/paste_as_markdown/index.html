@@ -11,6 +11,7 @@
             {% csrf_token %}
             {{ form }}
             <input type="submit" value="Paste">
+            {{ error_msg }}
         </form>
     </body>
 </html>
