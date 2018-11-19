@@ -16,10 +16,13 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import include, path
+from django.conf.urls import url
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('elementary-cellular-automata/', include('elementary_cellular_automata.urls')),
     path('paste-as-markdown/', include('paste_as_markdown.urls')),
     path('admin/', admin.site.urls),
-    path('hashid/', include('hashid.urls'))
+    path('hashid/', include('hashid.urls')),
+    url(r'^$', RedirectView.as_view(url='elementary-cellular-automata/'))
 ]

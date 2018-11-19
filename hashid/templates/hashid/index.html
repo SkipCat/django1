@@ -1,16 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
         <title>Hashid</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <h1>Hashid</h1>
-        <form action="/hashid/" method="POST">
-            {% csrf_token %}
-            {{ form }}
-            <input type="submit" value="Paste">
-        </form>
+        <nav>
+            <a href="/elementary-cellular-automata/">Elementary Cellular Automata</a>
+            <a href="/paste-as-markdown/">Paste as Markdown</a>
+            <a href="/hashid/">Hashid</a>
+            <a href="/admin/">Administration</a>
+        </nav>
+        <main>
+            <h1>Hashid</h1>
+            <br>
+            <form action="/hashid/" method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Paste">
+            </form>
+        </main>
     </body>
 </html>

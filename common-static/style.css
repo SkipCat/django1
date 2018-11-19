@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: turquoise;
+    height: 50px;
+    padding: 0 100px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    opacity: 0.5;
+}
+
+main {
+    margin: 45px 100px;
+}
+
+.field-container input {
+    margin-top: 20px;
+}
+
+textarea {
+    margin-top: 10px;
+}
+
+input[type="text"] {
+    margin-left: 10px;
+    width: 250px;
+}
+
+input[type="submit"] {
+    background-color: turquoise;
+    border-radius: 3px;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: black;
+    color: turquoise;
+}

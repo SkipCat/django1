@@ -1,11 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
         <title>Paste as Markdown</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css">
     </head>
     <body>
-        {{ content|safe }}
+        <nav>
+            <a href="/elementary-cellular-automata/">Elementary Cellular Automata</a>
+            <a href="/paste-as-markdown/">Paste as Markdown</a>
+            <a href="/hashid/">Hashid</a>
+            <a href="/admin/">Administration</a>
+        </nav>
+        <main>
+            {{ content|safe }}
+        </main>
     </body>
 </html>
